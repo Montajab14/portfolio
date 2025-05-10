@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio MAROUF Montajab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <div class="top-info">
+      <h1>MAROUF Montajab</h1>
+      <p>BTS SIO SLAM INIT</p>
+      <p style="font-size: 12px;">Seconde année</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/montajabmarouf" target="_blank">
+          <img src="https://static-00.iconduck.com/assets.00/linkedin-with-circle-icon-512x512-cvyrro5n.png" alt="LinkedIn">
+        </a>
+        <a href="mailto:montajabmarouf14@gmail.com">
+          <img src="https://icons.veryicon.com/png/o/business/oa-office/mail-227.png" alt="Email">
+        </a>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#accueil"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Accueil">Accueil</a>
+      <a href="#profil"><img src="https://cdn-icons-png.flaticon.com/512/17/17004.png" alt="Profil">Profil</a>
+      <a href="#parcours"><img src="https://cdn-icons-png.flaticon.com/512/42/42972.png" alt="Parcours">Parcours</a>
+      <a href="#experience"><img src="https://cdn-icons-png.flaticon.com/256/71/71200.png">Expérience pro</a>
+      <a href="#competences"><img src="https://cdn-icons-png.flaticon.com/512/926/926403.png" alt="Compétences">Compétences</a>
+      <a href="#projets"><img src="https://static.thenounproject.com/png/5798207-200.png" alt="Projets">Projets</a>
+      <a href="#epreuves"><img src="https://cdn-icons-png.flaticon.com/512/171/171322.png" alt="Épreuves">Épreuves</a>
+      <a href="#veille"><img src="https://cdn-icons-png.flaticon.com/512/4257/4257483.png" alt="Veille">Veille technologique</a>
+    </nav>
+  </div>
+
+  <div class="content">
+    <section id="accueil" class="section accueil visible">
+      <h2>Bienvenue dans le portfolio de Montajab Marouf !</h2>
+    </section>
+
+    <section id="profil" class="section">
+      <div style="display: flex; align-items: center; gap: 60px;">
+        <img id="profil-img" src="img/Montajab.jpg" alt="Photo de Montajab" style="border-radius: 150px; width: 320px; height: 320px;">
+        <div id="profil-text" style="max-width: 600px;">
+          <h2 style="font-size: 42px;"><u>Qui suis-je ?</u></h2>
+          <p style="font-size: 24px;">Etudiant en deuxième année de BTS SIO option SLAM, passionné par le développement web et la création de solutions numériques innovantes. J'envisage de continuer mes études jusqu'au BAC+5 et devenir développeur Full-Stack.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="parcours" class="section">
+      <div class="timeline-title">Mon Parcours Scolaire Après BAC</div>
+      <div class="timeline" id="timeline">
+        <div class="step visible">
+          <strong>Bac obtenu en 2019</strong>
+          <p>Série Sciences et Technologies du Management et de la Gestion. Lycée Sainte Marie à créteil.</p>
+        </div>
+        <button class="arrow-btn" onclick="showNextStep(1)">➡️</button>
+
+        <div class="step" style="display: none;">
+          <strong>Licence de droit (2019-2023)</strong> <br><br><br>
+          <p>Université Paris 12 UPEC. Arrêt en L2</p>
+        </div>
+        <button class="arrow-btn" style="display: none;" onclick="showNextStep(2)">➡️</button>
+
+        <div class="step" style="display: none;">
+          <strong>BTS SIO SLAM (2023-2025)</strong> <br><br><br>
+          <p>Institut Européen F2I, Vincennes.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+
+          if (entry.target.id === 'profil') {
+            const img = document.getElementById('profil-img');
+            const text = document.getElementById('profil-text');
+
+            img.style.opacity = '0';
+            img.style.animation = 'fadeInPhoto 2s forwards';
+
+            text.style.opacity = '0';
+            text.style.animation = 'slideInText 2s 2s forwards';
+          }
+        }
+      });
+    }, {
+      threshold: 0.6
+    });
+
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
+    });
+
+    function showNextStep(index) {
+      const steps = document.querySelectorAll('.timeline .step');
+      const buttons = document.querySelectorAll('.timeline .arrow-btn');
+
+      if (steps[index]) {
+        steps[index].style.display = 'block';
+        setTimeout(() => {
+          steps[index].classList.add('visible');
+        }, 10);
+
+        if (buttons[index - 1]) {
+          buttons[index - 1].style.display = 'inline-block';
+        }
+
+        if (buttons[index]) {
+          buttons[index].style.display = 'inline-block';
+        }
+      }
+    }
+  </script>
+</body>
+</html>
