@@ -1,4 +1,4 @@
-💼 Portfolio – Développer par moi-même
+💼 Portfolio – Développer par moi-même <br> 
 📋 Introduction
 Ce projet est un portfolio personnel développé avec Visual Studio Code.
 Il présente les projets réalisés, les compétences, l'expérience, ainsi que les informations sur les épreuves E5 et E6.
