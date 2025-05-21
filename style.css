@@ -18,6 +18,7 @@ html, body {
 body {
   display: flex;
   background-color: #f4f4f4;
+  font-family: 'Poppins', sans-serif;
 }
 
 .sidebar {
@@ -362,7 +363,7 @@ body {
 }
 
 .projet-item {
-  width: 200px;
+  width: 300px;
   height: 200px;
   overflow: hidden;
   border: 2px solid #000;
@@ -399,6 +400,16 @@ body {
   margin-bottom: 40px;
 }
 
+.epreuve-content {
+  font-size: 14px;        
+  line-height: 1.6;       
+  padding: 16px;          
+  overflow-y: auto;       
+  height: 100%;           
+  box-sizing: border-box; 
+}
+
+
 .epreuves-container {
   display: flex;
   justify-content: space-between;
@@ -416,7 +427,7 @@ body {
   font-weight: bold;
   text-decoration: underline;
   margin-bottom: 20px;
-  min-height: 48px; /* Assure un alignement parfait */
+  min-height: 48px; 
 }
 
 .epreuve-card {
@@ -447,3 +458,22 @@ body {
 .synthese-button:hover {
   background-color: #218838;
 }
+
+.veille-button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.veille-button:hover {
+  background-color: #333;
+}
+
